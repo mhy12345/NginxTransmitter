@@ -1,0 +1,8 @@
+nginx-host:
+        container_name: nginx-host
+        image: nginx-host-image
+        external_links:
+                - wordpress_wordpress:wordpress_wordpress
+                - goldenelder_wordpress:goldenelder_wordpress
+        ports:
+                - 80:80

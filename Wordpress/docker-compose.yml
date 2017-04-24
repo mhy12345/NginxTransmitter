@@ -1,0 +1,15 @@
+wordpress:
+    image: wordpress
+    ports:
+        - "8022:80"
+    environment:
+        WORDPRESS_DB_PASSWORD: example
+    links:
+        - wordpress_mysql:mysql
+    container_name: wordpress_wordpress
+
+wordpress_mysql:
+    image: mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: example
+    container_name: wordpress_mysql

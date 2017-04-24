@@ -1,0 +1,15 @@
+wordpress:
+    image: wordpress
+    ports:
+        - "8023:80"
+    environment:
+        WORDPRESS_DB_PASSWORD: example
+    links:
+        - goldenelder_mysql:mysql
+    container_name: goldenelder_wordpress
+
+goldenelder_mysql:
+    image: mysql
+    environment:
+        MYSQL_ROOT_PASSWORD: example
+    container_name: goldenelder_mysql
