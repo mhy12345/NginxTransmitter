@@ -1,8 +1,10 @@
 nginx-host:
         container_name: nginx-host
         image: nginx-host-image
+        restart: always
         external_links:
                 - wordpress_wordpress:wordpress_wordpress
                 - goldenelder_wordpress:goldenelder_wordpress
+                - owllive_server:owllive_server
         ports:
                 - 80:80

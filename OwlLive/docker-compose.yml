@@ -1,0 +1,13 @@
+owllive_server:
+    image: owllive-image
+    ports:
+        - "8024:80"
+    links:
+        - owllive_mongo:mongodb
+    container_name: owllive_server
+
+owllive_mongo:
+    image: mongo
+    ports:
+        - "27017:27017"
+    container_name: owllive_mongo
